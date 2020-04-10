@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             activity.progressBar.setVisibility(View.VISIBLE);
         }
 
-
         @Override
         protected String doInBackground(Integer... integers) {
 
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
 
-            MainActivity activity = activityWeakReference.get();
+            MainActivity activity = activityWeakReference.get(); //for axcess main activity
             if (activity == null || activity.isFinishing()) {
                 return;
             }
@@ -80,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            MainActivity activity = activityWeakReference.get();
+            MainActivity activity = activityWeakReference.get(); //for axcess main activity
             if (activity == null || activity.isFinishing()) {
                 return;
             }
